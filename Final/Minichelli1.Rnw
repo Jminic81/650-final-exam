@@ -1,0 +1,5 @@
+cat('\\documentclass{article}\n','\begin{document}\n', 'title{Final Arithmetic Exam}\n', '\author{Charles Redmond}\n', '\maketitle', file='test.Rnw')
+x<-sample(1:10,1)
+y<-sample(1:10,1)
+sentence<-paste('x' + 'y' = sum(x,y)\n',sep='')
+cat(sentence,file='example.Rnw',append=TRUE)

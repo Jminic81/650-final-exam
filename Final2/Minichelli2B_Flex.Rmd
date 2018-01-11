@@ -1,0 +1,62 @@
+---
+title: "Untitled"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(ggplot2)
+```
+
+Column {data-width=250}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+ruth<-base%>%
+  filter(playerID=='ruthba01')%>%
+  select(yearID,HR)
+
+ggplot()+
+  geom_line(data=ruth,aes(x=yearID,y=HR))
+```
+
+Column {data-width=250}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+aaron<-base%>%
+  filter(playerID=='aaronha01')%>%
+  select(yearID,HR)
+
+ggplot()+
+  geom_line(data=aaron,aes(x=yearID,y=HR))
+```
+
+### Chart C
+
+```{r}
+mays<-base%>%
+  filter(playerID=='mayswi01')%>%
+  select(yearID,HR)
+
+ggplot()+
+  geom_line(data=mays,aes(x=yearID,y=HR))
+```
+
+### Chart D
+
+```{r}
+bonds<-base%>%
+  filter(playerID=='bondsba01')%>%
+  select(yearID,HR)
+
+ggplot()+
+  geom_line(data=bonds,aes(x=yearID,y=HR))
+```
